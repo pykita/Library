@@ -19,19 +19,28 @@ namespace Library
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class BookList : Window
     {
-        public MainWindow()
+        private AddEditBook addEditBook;
+
+        public BookList()
         {
             InitializeComponent();
+
+            InitializeDataGrid();
+
+            addEditBook = new AddEditBook();
         }
 
-        public void btnHelloWorld_Click(object sender, RoutedEventArgs e)
+        private void btnAddBook_Click(object sender, RoutedEventArgs e)
         {
-            Factory.Factories.BooksFactory.AddBook(new Book { Name = "Harry Potter and phylosophy stone" });
-            Factory.Factories.BooksFactory.AddBook(new Book { Name = "Harry Potter and chamber of secrets" });
+            addEditBook.Show();
+            addEditBook.Owner = this;
+        }
 
-            var items = Factory.Factories.BooksFactory.GetList();
+        public void InitializeDataGrid()
+        {
+            DgBooks.ItemsSource = Factory.Factories.BooksFactory.GetList();
         }
     }
 }
