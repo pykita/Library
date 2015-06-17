@@ -21,7 +21,9 @@ namespace Library
     /// </summary>
     public partial class BookList : Window
     {
-        private AddEditBook addEditBook;
+        private AddBook addBookForm;
+
+        private EditBook editBookForm;
 
         public BookList()
         {
@@ -29,14 +31,23 @@ namespace Library
 
             InitializeDataGrid();
 
-            addEditBook = new AddEditBook();
+            addBookForm = new AddBook(this);
+            editBookForm = new EditBook(this);
         }
 
         private void btnAddBook_Click(object sender, RoutedEventArgs e)
         {
-            addEditBook.Show();
-            addEditBook.Owner = this;
+            addBookForm.Show();
         }
+
+
+        private void EditBook_Click(object sender, RoutedEventArgs e)
+        {
+            var bookToEdit = (Book)((Button)e.Source).DataContext;
+            editBookForm.CurrentBook = bookToEdit;
+            editBookForm.Show();
+        }
+
 
         public void InitializeDataGrid()
         {

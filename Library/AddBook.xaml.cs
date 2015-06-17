@@ -18,10 +18,14 @@ namespace Library
     /// <summary>
     /// Логика взаимодействия для AddEditBook.xaml
     /// </summary>
-    public partial class AddEditBook : Window
+    public partial class AddBook : Window
     {
-        public AddEditBook()
+        BookList parent;
+
+        public AddBook(BookList parent)
         {
+            this.parent = parent;
+
             InitializeComponent();
         }
 
@@ -32,17 +36,12 @@ namespace Library
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            //add new book
-            //Book newBook = new Book 
-            //{
-            //    Name = txtBookName.Text
-            //};
             Book newBook = new Book();
             newBook.Name = txtBookName.Text;
 
             Factory.Factories.BooksFactory.AddBook(newBook);
 
-            ((BookList)this.Owner).InitializeDataGrid();
+            parent.InitializeDataGrid();
 
             this.Hide();
         }
