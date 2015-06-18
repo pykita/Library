@@ -47,6 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Factories\BooksFactory.cs" />
+    <Compile Include="Migrations\201506181334515_AddAuthorName.cs" />
+    <Compile Include="Migrations\201506181334515_AddAuthorName.Designer.cs">
+      <DependentUpon>201506181334515_AddAuthorName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Contexts\BookContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -57,7 +62,11 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201506181334515_AddAuthorName.resx">
+      <DependentUpon>201506181334515_AddAuthorName.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

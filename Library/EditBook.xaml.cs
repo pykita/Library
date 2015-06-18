@@ -1,4 +1,5 @@
-﻿using Library.Factory.Models;
+﻿using System.ComponentModel;
+using Library.Factory.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,11 +62,20 @@ namespace Library
         public void UpdateForm()
         {
             txtBookName.Text = currentBook.Name;
+            txtAuthorName.Text = currentBook.AuthorName;
         }
 
         private void UpdateBook()
         {
             currentBook.Name = txtBookName.Text;
+            currentBook.AuthorName = txtAuthorName.Text;
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            e.Cancel = true;
+
+            this.Hide();
         }
     }
 }
