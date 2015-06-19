@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using Library.Factory.Contexts;
 using Library.Factory.Models;
 
@@ -38,6 +39,16 @@ namespace Library.Factory.Factories
 
                 return currentBook;
             }
-        } 
+        }
+
+        public static void DeleteBook(Book bookToDelete)
+        {
+            using (var db =new BookContext())
+            {
+                var currentBook = db.Books.FirstOrDefault(book => book.Id == bookToDelete.Id);
+                db.Books.Remove(currentBook);
+                db.SaveChanges();
+            }
+        }
     }
 }
