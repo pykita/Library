@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Library.Factory.Models
@@ -11,5 +12,7 @@ namespace Library.Factory.Models
         public string Name { get; set; }
 
         public string AuthorName { get; set; }
+
+        public DateTime? CreatedDate { get; set; }
     }
 }

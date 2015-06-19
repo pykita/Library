@@ -40,6 +40,7 @@ namespace Library
             Book newBook = new Book();
             newBook.Name = txtBookName.Text;
             newBook.AuthorName = txtBookAuthor.Text;
+            newBook.CreatedDate = DateTime.Now;
 
             Factory.Factories.BooksFactory.AddBook(newBook);
 
