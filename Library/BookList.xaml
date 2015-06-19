@@ -1,7 +1,7 @@
 ﻿<Window x:Class="Library.BookList"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="623">
+        Title="MainWindow" Height="350" Width="764">
     <Grid Margin="0,0,0,-1" RenderTransformOrigin="0.5,0.5">
         <Grid.RenderTransform>
             <TransformGroup>
@@ -14,7 +14,7 @@
         <DataGrid x:Name="DgBooks" HorizontalAlignment="Left" Margin="10,0,0,0" 
                   VerticalAlignment="Top" Height="274"  
                   ItemsSource="{Binding}" AutoGenerateColumns="False"
-                  CanUserAddRows="False" CanUserDeleteRows="False" Width="500">
+                  CanUserAddRows="False" CanUserDeleteRows="False" Width="auto">
             <DataGrid.Columns>
                 <DataGridTextColumn  IsReadOnly="True" Header="Id" Binding="{Binding Path=Id}" Width="20"/>
                 <DataGridTextColumn IsReadOnly="True" Header="Date" Binding="{Binding CreatedDate, StringFormat=\{0:dd.MM.yyyy\}}"  Width="80"/>
@@ -27,8 +27,16 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+            
+                <DataGridTemplateColumn Width="50">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="DeleteBook_Click">Delete</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnAddBook" Content="Add book" HorizontalAlignment="Left" Margin="523,33,0,0" VerticalAlignment="Top" Width="75" Click="btnAddBook_Click"/>
+        <Button x:Name="btnAddBook" Content="Add book" HorizontalAlignment="Left" Margin="565,27,0,0" VerticalAlignment="Top" Width="75" Click="btnAddBook_Click"/>
     </Grid>
 </Window>

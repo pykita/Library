@@ -26,6 +26,8 @@ namespace Library
 
         private EditBook editBookForm;
 
+       
+
         public BookList()
         {
             InitializeComponent();
@@ -34,6 +36,7 @@ namespace Library
 
             addBookForm = new AddBook(this);
             editBookForm = new EditBook(this);
+           
         }
 
         private void btnAddBook_Click(object sender, RoutedEventArgs e)
@@ -49,6 +52,14 @@ namespace Library
             editBookForm.Show();
         }
 
+
+        private void DeleteBook_Click(object sender, RoutedEventArgs e)
+        {
+
+            var bookToDelete = (Book)((Button)e.Source).DataContext;
+            Factory.Factories.BooksFactory.DeleteBook(bookToDelete);
+            InitializeDataGrid();
+        }
 
         public void InitializeDataGrid()
         {
