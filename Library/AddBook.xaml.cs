@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,10 +39,17 @@ namespace Library
         {
             Book newBook = new Book();
             newBook.Name = txtBookName.Text;
+            newBook.AuthorName = txtBookAuthor.Text;
 
             Factory.Factories.BooksFactory.AddBook(newBook);
 
             parent.InitializeDataGrid();
+
+            this.Hide();
+        }
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            e.Cancel = true;
 
             this.Hide();
         }

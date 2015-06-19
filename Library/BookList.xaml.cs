@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,6 +53,13 @@ namespace Library
         public void InitializeDataGrid()
         {
             DgBooks.ItemsSource = Factory.Factories.BooksFactory.GetList();
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            e.Cancel = true;
+
+            Application.Current.Shutdown();
         }
     }
 }
