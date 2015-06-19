@@ -51,6 +51,14 @@
     <Compile Include="Migrations\201506181334515_AddAuthorName.Designer.cs">
       <DependentUpon>201506181334515_AddAuthorName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506191104454_deleteDate.cs" />
+    <Compile Include="Migrations\201506191104454_deleteDate.Designer.cs">
+      <DependentUpon>201506191104454_deleteDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506191105210_createdDate.cs" />
+    <Compile Include="Migrations\201506191105210_createdDate.Designer.cs">
+      <DependentUpon>201506191105210_createdDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Contexts\BookContext.cs" />
@@ -65,6 +73,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201506181334515_AddAuthorName.resx">
       <DependentUpon>201506181334515_AddAuthorName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506191104454_deleteDate.resx">
+      <DependentUpon>201506191104454_deleteDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506191105210_createdDate.resx">
+      <DependentUpon>201506191105210_createdDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
