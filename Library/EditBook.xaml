@@ -4,6 +4,8 @@
         Title="EditBook" Height="300" Width="300">
     <Grid>
         <Button x:Name="btnEdit" Content="Edit" HorizontalAlignment="Left" Margin="169,198,0,0" VerticalAlignment="Top" Width="75" Click="btnEdit_Click"/>
+        <TextBox x:Name="txtSerialnumber" HorizontalAlignment="Left" Height="23" Margin="73,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171"  SpellCheck.IsEnabled="True"/>
+        <Label Content="Serial №" HorizontalAlignment="Left" Margin="20,35,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtBookName" HorizontalAlignment="Left" Height="23" Margin="73,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="171"  SpellCheck.IsEnabled="True"/>
         <Label Content="Name" HorizontalAlignment="Left" Margin="20,55,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="20,198,0,0" VerticalAlignment="Top" Width="75" Click="btnCancel_Click"/>

@@ -41,6 +41,8 @@ namespace Library
             newBook.Name = txtBookName.Text;
             newBook.AuthorName = txtBookAuthor.Text;
             newBook.CreatedDate = DateTime.Now;
+            newBook.Serial = txtSerialnumber.Text;
+            newBook.Modify = DateTime.Now;
 
             Factory.Factories.BooksFactory.AddBook(newBook);
 

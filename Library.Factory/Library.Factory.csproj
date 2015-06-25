@@ -59,6 +59,10 @@
     <Compile Include="Migrations\201506191105210_createdDate.Designer.cs">
       <DependentUpon>201506191105210_createdDate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506251235340_Addserial.cs" />
+    <Compile Include="Migrations\201506251235340_Addserial.Designer.cs">
+      <DependentUpon>201506251235340_Addserial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Contexts\BookContext.cs" />
@@ -79,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506191105210_createdDate.resx">
       <DependentUpon>201506191105210_createdDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506251235340_Addserial.resx">
+      <DependentUpon>201506251235340_Addserial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

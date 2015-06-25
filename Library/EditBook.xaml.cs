@@ -63,12 +63,15 @@ namespace Library
         {
             txtBookName.Text = currentBook.Name;
             txtAuthorName.Text = currentBook.AuthorName;
+            txtSerialnumber.Text = currentBook.Serial;
         }
 
         private void UpdateBook()
         {
             currentBook.Name = txtBookName.Text;
             currentBook.AuthorName = txtAuthorName.Text;
+            currentBook.Serial = txtSerialnumber.Text;
+            currentBook.Modify = DateTime.Now;
         }
 
         protected override void OnClosing(CancelEventArgs e)
