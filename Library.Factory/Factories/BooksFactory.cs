@@ -36,6 +36,7 @@ namespace Library.Factory.Factories
                 currentBook.Name = newBook.Name;
                 currentBook.AuthorName = newBook.AuthorName;
                 currentBook.Serial = newBook.Serial;
+                currentBook.Year = newBook.Year;
                 db.SaveChanges();
 
                 return currentBook;

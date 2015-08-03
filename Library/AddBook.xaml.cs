@@ -43,6 +43,7 @@ namespace Library
             newBook.CreatedDate = DateTime.Now;
             newBook.Serial = txtSerialnumber.Text;
             newBook.Modify = DateTime.Now;
+            newBook.Year = txtBookYear.Text;
 
             Factory.Factories.BooksFactory.AddBook(newBook);
 

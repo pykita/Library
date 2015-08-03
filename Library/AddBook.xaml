@@ -6,10 +6,12 @@
         <Button x:Name="btnEdit" Content="Add" HorizontalAlignment="Left" Margin="169,198,0,0" VerticalAlignment="Top" Width="75" Click="btnEdit_Click"/>
         <TextBox x:Name="txtSerialnumber" HorizontalAlignment="Left" Height="23" Margin="76,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <Label Content="Serial №" HorizontalAlignment="Left" Margin="20,32,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtBookName" HorizontalAlignment="Left" Height="23" Margin="76,56,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Name" HorizontalAlignment="Left" Margin="20,52,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtBookName" HorizontalAlignment="Left" Height="23" Margin="76,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Year" HorizontalAlignment="Left" Margin="20,53,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtBookYear" HorizontalAlignment="Left" Height="23" Margin="76,56,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="20,75,0,0" VerticalAlignment="Top"/>
         <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="20,198,0,0" VerticalAlignment="Top" Width="75" Click="btnCancel_Click"/>
-        <TextBox x:Name="txtBookAuthor" HorizontalAlignment="Left" Height="23" Margin="76,75,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Author" HorizontalAlignment="Left" Margin="20,75,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtBookAuthor" HorizontalAlignment="Left" Height="23" Margin="76,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Author" HorizontalAlignment="Left" Margin="20,97,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

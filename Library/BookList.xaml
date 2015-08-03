@@ -17,6 +17,7 @@
                   CanUserAddRows="False" CanUserDeleteRows="False" Width="702">
             <DataGrid.Columns>
                 <DataGridTextColumn  IsReadOnly="True" Header="Serial №" Binding="{Binding Path=Serial}" Width="80"/>
+                <DataGridTextColumn  IsReadOnly="True" Header="Year" Binding="{Binding Path=Year}" Width="80"/>
                 <DataGridTextColumn  IsReadOnly="True" Header="Modify" Binding="{Binding Path=Modify , StringFormat=\{0:dd.MM.yyyy\}}" Width="80"/>
                 <DataGridTextColumn  IsReadOnly="True" Header="Id" Binding="{Binding Path=Id}" Width="20" Visibility="Hidden"/>
                 <DataGridTextColumn IsReadOnly="True" Header="Date" Binding="{Binding CreatedDate, StringFormat=\{0:dd.MM.yyyy\}}"  Width="80"/>

@@ -64,6 +64,7 @@ namespace Library
             txtBookName.Text = currentBook.Name;
             txtAuthorName.Text = currentBook.AuthorName;
             txtSerialnumber.Text = currentBook.Serial;
+            txtYear.Text = currentBook.Year;
         }
 
         private void UpdateBook()
@@ -72,6 +73,7 @@ namespace Library
             currentBook.AuthorName = txtAuthorName.Text;
             currentBook.Serial = txtSerialnumber.Text;
             currentBook.Modify = DateTime.Now;
+            currentBook.Year = txtYear.Text;
         }
 
         protected override void OnClosing(CancelEventArgs e)
