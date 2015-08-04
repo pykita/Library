@@ -26,10 +26,12 @@ namespace Library
 
         private EditBook editBookForm;
 
-       
+       Menu parent;
 
-        public BookList()
+        public BookList(Menu parent)
         {
+            this.parent = parent;
+
             InitializeComponent();
 
             InitializeDataGrid();
@@ -71,6 +73,12 @@ namespace Library
             e.Cancel = true;
 
             Application.Current.Shutdown();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.parent.Show();
+            this.Hide();
         }
     }
 }

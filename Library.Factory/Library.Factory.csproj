@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contexts\UserContext.cs" />
     <Compile Include="Factories\BooksFactory.cs" />
+    <Compile Include="Factories\UserFactory.cs" />
     <Compile Include="Migrations\201508031151572_InitialCreate.cs" />
     <Compile Include="Migrations\201508031151572_InitialCreate.Designer.cs">
       <DependentUpon>201508031151572_InitialCreate.cs</DependentUpon>
@@ -58,6 +60,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Contexts\BookContext.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
