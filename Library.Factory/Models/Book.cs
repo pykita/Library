@@ -14,5 +14,11 @@ namespace Library.Factory.Models
         public string AuthorName { get; set; }
 
         public DateTime? CreatedDate { get; set; }
+
+        public string Serial { get; set; }
+
+        public DateTime? Modify { get; set; }
+
+        public string Year { get; set; }
     }
 }

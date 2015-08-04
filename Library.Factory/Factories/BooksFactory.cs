@@ -35,6 +35,8 @@ namespace Library.Factory.Factories
                 var currentBook = db.Books.FirstOrDefault(book => book.Id == newBook.Id);
                 currentBook.Name = newBook.Name;
                 currentBook.AuthorName = newBook.AuthorName;
+                currentBook.Serial = newBook.Serial;
+                currentBook.Year = newBook.Year;
                 db.SaveChanges();
 
                 return currentBook;

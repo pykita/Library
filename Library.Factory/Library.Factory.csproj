@@ -47,17 +47,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Factories\BooksFactory.cs" />
-    <Compile Include="Migrations\201506181334515_AddAuthorName.cs" />
-    <Compile Include="Migrations\201506181334515_AddAuthorName.Designer.cs">
-      <DependentUpon>201506181334515_AddAuthorName.cs</DependentUpon>
+    <Compile Include="Migrations\201508031151572_InitialCreate.cs" />
+    <Compile Include="Migrations\201508031151572_InitialCreate.Designer.cs">
+      <DependentUpon>201508031151572_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201506191104454_deleteDate.cs" />
-    <Compile Include="Migrations\201506191104454_deleteDate.Designer.cs">
-      <DependentUpon>201506191104454_deleteDate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201506191105210_createdDate.cs" />
-    <Compile Include="Migrations\201506191105210_createdDate.Designer.cs">
-      <DependentUpon>201506191105210_createdDate.cs</DependentUpon>
+    <Compile Include="Migrations\201508031634169_Year.cs" />
+    <Compile Include="Migrations\201508031634169_Year.Designer.cs">
+      <DependentUpon>201508031634169_Year.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Book.cs" />
@@ -71,14 +67,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201506181334515_AddAuthorName.resx">
-      <DependentUpon>201506181334515_AddAuthorName.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201508031151572_InitialCreate.resx">
+      <DependentUpon>201508031151572_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506191104454_deleteDate.resx">
-      <DependentUpon>201506191104454_deleteDate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201506191105210_createdDate.resx">
-      <DependentUpon>201506191105210_createdDate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201508031634169_Year.resx">
+      <DependentUpon>201508031634169_Year.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
