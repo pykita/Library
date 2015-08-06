@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Library.Factory.Models;
 
 namespace Library
 {
@@ -20,6 +21,8 @@ namespace Library
     public partial class UserList : Window
     {
         private AddUser addUserForm;
+
+        private EditUser editUserForm;
 
         private Menu parent;
 
@@ -32,12 +35,9 @@ namespace Library
             InitializeDataGrid();
 
             addUserForm = new AddUser(this);
+            editUserForm = new EditUser(this);
         }
 
-        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -52,7 +52,23 @@ namespace Library
 
         public void InitializeDataGrid()
         {
-            
+            DgUser.ItemsSource = Factory.Factories.UsersFactory.GeList();
+        }
+
+        private void EditBook_Click(object sender, RoutedEventArgs e)
+        {
+            var userToEdit = (User)((Button)e.Source).DataContext;
+            editUserForm.CurrentUser = userToEdit;
+            editUserForm.Show();
+        }
+
+
+        private void DeleteBook_Click(object sender, RoutedEventArgs e)
+        {
+
+            var userToDelete = (User)((Button)e.Source).DataContext;
+            Factory.Factories.UsersFactory.DeleteUser(userToDelete);
+            InitializeDataGrid();
         }
     }
 }

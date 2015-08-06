@@ -8,7 +8,7 @@ using Library.Factory.Models;
 
 namespace Library.Factory.Factories
 {
-    public class UserFactory
+    public class UsersFactory
     {
         public static List<User> GeList()
         {

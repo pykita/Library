@@ -39,7 +39,7 @@ namespace Library
             newUser.Adress = UserAdress.Text;
             newUser.RegistretionDate = DateTime.Now;
 
-            Factory.Factories.UserFactory.AddUser(newUser);
+            Factory.Factories.UsersFactory.AddUser(newUser);
             parent.InitializeDataGrid();
             this.Hide();
         }
