@@ -14,7 +14,7 @@
         <DataGrid x:Name="DgUser" HorizontalAlignment="Left" Margin="-1,2,0,0" 
                   VerticalAlignment="Top" Height="290"  
                   ItemsSource="{Binding}" AutoGenerateColumns="False"
-                  CanUserAddRows="False" CanUserDeleteRows="False" Width="611" RenderTransformOrigin="0.5,0.5">
+                  CanUserAddRows="False" CanUserDeleteRows="False" Width="696" RenderTransformOrigin="0.5,0.5">
             <DataGrid.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -46,8 +46,8 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Menu" HorizontalAlignment="Left" Margin="627,247,0,0" VerticalAlignment="Top" Width="96" Height="34" Click="Button_Click"/>
-        <Button Content="Add User" HorizontalAlignment="Left" Margin="627,30,0,0" VerticalAlignment="Top" Width="96" Height="35" Click="Button_Click_1"/>
+        <Button Content="Menu" HorizontalAlignment="Left" Margin="703,250,0,0" VerticalAlignment="Top" Width="96" Height="34" Click="Button_Click"/>
+        <Button Content="Add User" HorizontalAlignment="Left" Margin="703,19,0,0" VerticalAlignment="Top" Width="96" Height="35" Click="Button_Click_1"/>
     </Grid>
 </Window>
 

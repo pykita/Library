@@ -46,20 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contexts\UserContext.cs" />
+    <Compile Include="Contexts\LibraryContext.cs" />
     <Compile Include="Factories\BooksFactory.cs" />
     <Compile Include="Factories\UserFactory.cs" />
-    <Compile Include="Migrations\201508031151572_InitialCreate.cs" />
-    <Compile Include="Migrations\201508031151572_InitialCreate.Designer.cs">
-      <DependentUpon>201508031151572_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201508031634169_Year.cs" />
-    <Compile Include="Migrations\201508031634169_Year.Designer.cs">
-      <DependentUpon>201508031634169_Year.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Book.cs" />
-    <Compile Include="Contexts\BookContext.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -68,14 +58,6 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201508031151572_InitialCreate.resx">
-      <DependentUpon>201508031151572_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201508031634169_Year.resx">
-      <DependentUpon>201508031634169_Year.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -13,5 +13,6 @@
         <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="20,198,0,0" VerticalAlignment="Top" Width="75" Click="btnCancel_Click"/>
         <TextBox x:Name="txtAuthorName" HorizontalAlignment="Left" Height="23" Margin="73,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="171" />
         <Label Content="Author" HorizontalAlignment="Left" Margin="20,97,0,0" VerticalAlignment="Top"/>
+        <ComboBox Name="cbUserList" HorizontalAlignment="Left" Margin="73,137,0,0" VerticalAlignment="Top" SelectedValuePath="Id" Width="171" DisplayMemberPath="Name" SelectionChanged="cbUserList_SelectionChanged" />
     </Grid>
 </Window>

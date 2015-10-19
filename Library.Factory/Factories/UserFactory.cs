@@ -1,8 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Data.Entity.Core.Common.CommandTrees;
-using System.Data.Entity.Core.Metadata.Edm;
 using System.Linq;
-using System.Runtime.InteropServices;
 using Library.Factory.Contexts;
 using Library.Factory.Models;
 
@@ -12,7 +9,7 @@ namespace Library.Factory.Factories
     {
         public static List<User> GeList()
         {
-            using (var db = new UserContext())
+            using (var db = new LibraryContext())
             {
                 return db.Users.ToList();
             }
@@ -21,17 +18,30 @@ namespace Library.Factory.Factories
 
         public static User AddUser(User newUser)
         {
-            using (var db = new UserContext())
+            using (var db = new LibraryContext())
             {
                 var user = db.Users.Add(newUser);
                 db.SaveChanges();
                 return user;
             }
         }
+        public static User GetUserById(int id)
+        {
+            using (var db = new LibraryContext())
+            {
+                var user = db.Users.FirstOrDefault(b => b.Id == id);
+                if (user != null)
+                {
+                    user.BookList = db.Books.Where(b => b.UserId == id).ToList();
+                }
+
+                return user;
+            }
+        }
 
         public static User UpdateUser(User newUser)
         {
-            using (var db = new UserContext())
+            using (var db = new LibraryContext())
             {
                 var currentUser = db.Users.FirstOrDefault(user => user.Id == newUser.Id);
                 currentUser.Name = newUser.Name;
@@ -46,7 +56,7 @@ namespace Library.Factory.Factories
 
         public static void DeleteUser(User userToDelete)
         {
-            using (var db = new UserContext())
+            using (var db = new LibraryContext())
             {
                 var currentUser = db.Users.FirstOrDefault(user => user.Id == userToDelete.Id);
                 db.Users.Remove(currentUser);

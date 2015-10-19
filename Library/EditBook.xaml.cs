@@ -1,18 +1,8 @@
 ﻿using System.ComponentModel;
 using Library.Factory.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Library
 {
@@ -41,6 +31,8 @@ namespace Library
             this.parent = parent;
 
             InitializeComponent();
+
+            cbUserList.ItemsSource = Factory.Factories.UsersFactory.GeList();
         }
 
       
@@ -51,6 +43,8 @@ namespace Library
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
+            
+
             UpdateBook();
 
             Factory.Factories.BooksFactory.UpdateBook(currentBook);
@@ -61,14 +55,21 @@ namespace Library
 
         public void UpdateForm()
         {
-            txtBookName.Text = currentBook.Name;
-            txtAuthorName.Text = currentBook.AuthorName;
-            txtSerialnumber.Text = currentBook.Serial;
-            txtYear.Text = currentBook.Year;
+            cbUserList.ItemsSource = Factory.Factories.UsersFactory.GeList();
+            var refreh = Factory.Factories.BooksFactory.GetBookById(currentBook.Id);
+            txtBookName.Text = refreh.Name;
+            txtAuthorName.Text = refreh.AuthorName;
+            txtSerialnumber.Text = refreh.Serial;
+            txtYear.Text = refreh.Year;
+            if (refreh.User != null)
+            {
+                cbUserList.SelectedValue = refreh.User.Id;
+            }
         }
 
         private void UpdateBook()
         {
+            currentBook.User = (User)cbUserList.SelectedItem;
             currentBook.Name = txtBookName.Text;
             currentBook.AuthorName = txtAuthorName.Text;
             currentBook.Serial = txtSerialnumber.Text;
@@ -82,5 +83,12 @@ namespace Library
 
             this.Hide();
         }
+
+        private void cbUserList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+            
     }
 }

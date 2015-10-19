@@ -20,5 +20,9 @@ namespace Library.Factory.Models
         public DateTime? Modify { get; set; }
 
         public string Year { get; set; }
+
+        public int? UserId { get; set; }
+
+        public virtual User User { get; set; }
     }
 }

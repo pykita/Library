@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using Library.Factory.Models;
 
 namespace Library
@@ -24,32 +13,31 @@ namespace Library
         private UserList parent;
         private User currentUser;
 
-        public User CurrentUser {
-   
-        get
+        public User CurrentUser 
         {
-            return currentUser;
-        }
+            get
+            {
+                return currentUser;
+            }
     
+            set
+            {
+                currentUser = value;
+                this.UpdateForm();
+            } 
+        }
 
-        set
+        public EditUser(UserList parent)
         {
-            currentUser = value;
-            this.UpdateForm();
-        } 
-    }
-
-    public EditUser(UserList parent)
-    {
             this.parent = parent;
 
             InitializeComponent();
+
         }
 
         private void btnEditUser_Click(object sender, RoutedEventArgs e)
         {
             UpdateUser();
-
             Factory.Factories.UsersFactory.UpdateUser(currentUser);
             parent.InitializeDataGrid();
 
@@ -58,10 +46,13 @@ namespace Library
 
         public void UpdateForm()
         {
+            currentUser = Factory.Factories.UsersFactory.GetUserById(currentUser.Id);
             txtEditName.Text = currentUser.Name;
             txtEditSecond.Text = currentUser.SecondName;
             txtEditPhone.Text = currentUser.PhoneNumber;
             txtEditAdress.Text = currentUser.Adress;
+
+            ListUserBook.ItemsSource = currentUser.BookList;
         }
 
         private void UpdateUser()
