@@ -24,5 +24,8 @@ namespace Library.Factory.Models
         public int? UserId { get; set; }
 
         public virtual User User { get; set; }
+
+        [NotMapped]
+        public bool IsChecked { get; set; }
     }
 }

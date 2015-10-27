@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using Library.Factory.Contexts;
 using Library.Factory.Models;
@@ -29,11 +30,9 @@ namespace Library.Factory.Factories
         {
             using (var db = new LibraryContext())
             {
-                var user = db.Users.FirstOrDefault(b => b.Id == id);
-                if (user != null)
-                {
-                    user.BookList = db.Books.Where(b => b.UserId == id).ToList();
-                }
+                var user = db.Users
+                                .Include(u => u.BookList)            
+                                .FirstOrDefault(b => b.Id == id);
 
                 return user;
             }

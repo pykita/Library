@@ -1,6 +1,10 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
 using Library.Factory.Models;
 
 namespace Library
@@ -52,7 +56,8 @@ namespace Library
             txtEditPhone.Text = currentUser.PhoneNumber;
             txtEditAdress.Text = currentUser.Adress;
 
-            ListUserBook.ItemsSource = currentUser.BookList;
+            DgUserBook.ItemsSource = currentUser.BookList;
+            DgBookAvalabel.ItemsSource = Factory.Factories.BooksFactory.GetBooksAvailable();
         }
 
         private void UpdateUser()
@@ -69,5 +74,29 @@ namespace Library
 
             this.Hide();
         }
+
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void btnAddInUserBook_Click(object sender, RoutedEventArgs e)
+        {
+            List<Book> newUserBooks = new List<Book>();
+            List<Book> newAvailable = new List<Book>();
+
+            for (int i = 0; i < DgUserBook.Items.Count; i++)
+            {
+                if (((Book)DgUserBook.Items[i]).IsChecked)
+                {
+                    newAvailable.Add((Book)DgUserBook.Items[i]);
+                }
+                else
+                {
+                    newUserBooks.Add((Book)DgUserBook.Items[i]);
+                }
+            }
+        }
+
     }
 }

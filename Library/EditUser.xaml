@@ -1,29 +1,61 @@
 ﻿<Window x:Class="Library.EditUser"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="EditUser" Height="445" Width="527">
-    <Grid Margin="0,0,-8,-3">
+        Title="EditUser" Height="513" Width="779">
+    <Grid Margin="0,0,0,-3" HorizontalAlignment="Left" Width="771" RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="-0.024"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.RenderTransform>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="94*"/>
-            <ColumnDefinition Width="27*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Button x:Name="btnEditUser"  Content="Edit" HorizontalAlignment="Left" Margin="65,237,0,0" VerticalAlignment="Top" Width="75" Click="btnEditUser_Click"/>
-        <Button x:Name="btnCancel"  Content="Cancel" HorizontalAlignment="Left" Margin="201,237,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label Content="Name" HorizontalAlignment="Left" Margin="65,31,0,0" VerticalAlignment="Top"/>
-        <Label Content="Second Name" HorizontalAlignment="Left" Margin="65,73,0,0" VerticalAlignment="Top"/>
-        <Label Content="Phone" HorizontalAlignment="Left" Margin="65,114,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnEditUser"  Content="Edit" HorizontalAlignment="Left" Margin="65,237,0,0" VerticalAlignment="Top" Width="75" Click="btnEditUser_Click" Height="20"/>
+        <Button x:Name="btnCancel"  Content="Cancel" HorizontalAlignment="Left" Margin="201,237,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="btnCancel_Click"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="65,31,0,0" VerticalAlignment="Top" Height="26" Width="42"/>
+        <Label Content="Second Name" HorizontalAlignment="Left" Margin="65,73,0,0" VerticalAlignment="Top" Height="26" Width="84"/>
+        <Label Content="Phone" HorizontalAlignment="Left" Margin="65,114,0,0" VerticalAlignment="Top" Height="26" Width="44"/>
         <TextBox x:Name="txtEditName"  HorizontalAlignment="Left" Height="23" Margin="156,35,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtEditSecond"  HorizontalAlignment="Left" Height="23" Margin="156,73,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtEditPhone"  HorizontalAlignment="Left" Height="23" Margin="156,114,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtEditAdress"  HorizontalAlignment="Left" Height="23" Margin="156,154,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <Label Content="Adress" HorizontalAlignment="Left" Margin="65,154,0,0" VerticalAlignment="Top"/>
-        <ListView HorizontalAlignment="Left" Height="100" Margin="352,80,0,0" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="2" Name="ListUserBook">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <Label Content="Adress" HorizontalAlignment="Left" Margin="65,154,0,0" VerticalAlignment="Top" Height="26" Width="45"/>
 
+
+        <DataGrid x:Name="DgUserBook" HorizontalAlignment="Left" Margin="300,35,0,0" 
+                  VerticalAlignment="Top" Height="222"  
+                  ItemsSource="{Binding}" AutoGenerateColumns="False"
+                  CanUserAddRows="False" CanUserDeleteRows="False" Width="160">
+            <DataGrid.Columns>
+                <DataGridTextColumn  IsReadOnly="True" Header="User Book" Binding="{Binding Path= Name}" Width="80"/>
+                <DataGridCheckBoxColumn Header="Checked" x:Name="DeliveryValueCheck" Width="70" Binding="{Binding Path=IsChecked, Mode=TwoWay}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid x:Name="DgBookAvalabel" HorizontalAlignment="Left" Margin="568,31,0,0" 
+                  VerticalAlignment="Top" Height="222"  
+                  ItemsSource="{Binding}" AutoGenerateColumns="False"
+                  CanUserAddRows="False" CanUserDeleteRows="False" Width="160">
+            <DataGrid.Columns>
+                <DataGridTextColumn  IsReadOnly="True" Header="Library Book" Binding="{Binding Path=Name}" Width="80"/>
+                <DataGridTemplateColumn Header="Checked" Width="70" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox HorizontalAlignment ="Center"></CheckBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Name ="BtnAddInUserBook"  Content="&lt;--" HorizontalAlignment="Left" Margin="476,76,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="btnAddInUserBook_Click"/>
+        <Button Name="BtnAddInLibrary" Content="--&gt;" HorizontalAlignment="Left" Margin="476,139,0,0" VerticalAlignment="Top" Width="75" Height="20"/>
     </Grid>
 </Window>

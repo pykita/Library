@@ -59,6 +59,15 @@ namespace Library.Factory.Factories
             }
         }
 
+        public static List<Book> GetBooksAvailable()
+        {
+            using (var db = new LibraryContext())
+            {
+                var booklist = db.Books.Where(b => b.UserId == null).ToList();
+                return booklist;
+            }
+        } 
+
             public static void DeleteBook(Book bookToDelete)
             {
                 using (var db = new LibraryContext())
